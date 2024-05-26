@@ -44,5 +44,6 @@ session_start();
         <input id="button" type="submit" value="Sign Up">
     </form>
 </div>
+<?php include("footer.php")?>
 </body>
 </html>

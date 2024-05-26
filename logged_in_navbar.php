@@ -1,3 +1,13 @@
+<?php
+// Check if the logout has been requested
+if (isset($_GET['logout'])) {
+    // Unset the user session
+    unset($_SESSION['user_name']);
+    // Redirect to a certain page (e.g., login page)
+    header('Location: login.php');
+    exit;
+}
+?>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="scripts.js"></script>
@@ -10,7 +20,7 @@
         <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link" href="exercises.php">Exercises</a>
             <a class="nav-item nav-link" href="training_plans.php">Training Plans</a>
-            <a class="nav-item nav-link" href="logout.php">Log out</a>
+            <a href="?logout=true" class="nav-item nav-link">Log out</a>
         </div>
     </div>
 </nav>

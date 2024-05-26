@@ -55,5 +55,6 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 <input id="button" type="submit" value="Login">
             </form>
         </div>
+        <?php include("footer.php")?>
     </body>
 </html>
