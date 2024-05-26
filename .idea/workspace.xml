@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="added logged in navbar">
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="navbar in signin form">
+      <change afterPath="$PROJECT_DIR$/logged_out.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +81,7 @@
       <workItem from="1716315390622" duration="518000" />
       <workItem from="1716316095267" duration="1119000" />
       <workItem from="1716722250738" duration="646000" />
-      <workItem from="1716722958307" duration="5895000" />
+      <workItem from="1716722958307" duration="7051000" />
     </task>
     <task id="LOCAL-00001" summary="sign up login">
       <option name="closed" value="true" />
@@ -95,7 +99,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716729596065</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="navbar in login form">
+      <option name="closed" value="true" />
+      <created>1716729843688</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716729843688</updated>
+    </task>
+    <task id="LOCAL-00004" summary="navbar in signin form">
+      <option name="closed" value="true" />
+      <created>1716729936734</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716729936734</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +124,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sign up login" />
     <MESSAGE value="added logged in navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="added logged in navbar" />
+    <MESSAGE value="navbar in login form" />
+    <MESSAGE value="navbar in signin form" />
+    <option name="LAST_COMMIT_MESSAGE" value="navbar in signin form" />
   </component>
 </project>

@@ -16,8 +16,9 @@ session_start();
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <?php include("logged_in_navbar.php")?>
-        <br>
-        <p>Hellow, <?php echo $user_data['user_name']?></p>
+        <?php
+        ($user_data)? include("logged_in_navbar.php") :include ("logged_out_navbar.php");
+        ?>
+
     </body>
 </html>
