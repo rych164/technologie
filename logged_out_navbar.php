@@ -13,8 +13,8 @@
             <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In/Login</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#" onclick="transformToSignInForm()">Sign In</a>
-                    <a class="dropdown-item" href="#" onclick="transformToLoginForm()">Log In</a>
+                    <a class="dropdown-item" href="signup.php">Sign In</a>
+                    <a class="dropdown-item" href="login.php">Log In</a>
                 </div>
             </div>
             <a class="nav-item nav-link" href="exercises.php">Exercises</a>
