@@ -28,16 +28,20 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>signup</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
+<?php include("logged_out_navbar.php") ?>
 <div id="box">
     <form method="post">
         <input type="text" name="user_name">
         <input type="password" name="password">
         <input id="button" type="submit" value="Sign Up">
-
-        <a href="login.php">Login</a>
     </form>
 </div>
 </body>
