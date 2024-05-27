@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="Ukończenie rejestracji i logowania" />
+    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="przywrócenie poprawnego wyświetlania obrazów">
+      <change afterPath="$PROJECT_DIR$/exercises.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modals.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +80,7 @@
       <workItem from="1716315390622" duration="518000" />
       <workItem from="1716316095267" duration="1119000" />
       <workItem from="1716722250738" duration="646000" />
-      <workItem from="1716722958307" duration="14320000" />
+      <workItem from="1716722958307" duration="15253000" />
     </task>
     <task id="LOCAL-00001" summary="sign up login">
       <option name="closed" value="true" />
@@ -165,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716804493169</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="przywrócenie poprawnego wyświetlania obrazów">
+      <option name="closed" value="true" />
+      <created>1716804895628</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716804895628</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +196,7 @@
     <MESSAGE value="dodanie pop upów udanej/ nieudanej rejestracji/logowania" />
     <MESSAGE value="dopasowanie stylów strony do pop upów" />
     <MESSAGE value="Ukończenie rejestracji i logowania" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ukończenie rejestracji i logowania" />
+    <MESSAGE value="przywrócenie poprawnego wyświetlania obrazów" />
+    <option name="LAST_COMMIT_MESSAGE" value="przywrócenie poprawnego wyświetlania obrazów" />
   </component>
 </project>
