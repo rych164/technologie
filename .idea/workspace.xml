@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="added main page content">
+    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="added registration and login modals in logged out navbar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DALL·E 2024-04-23 21.50.13 - An illustration of a fit individual, clearly a gym enthusiast, fully clothed in a rustic town square. The character is wearing a stylish casual outfit.webp" beforeDir="false" afterPath="$PROJECT_DIR$/DALL·E 2024-04-23 21.50.13 - An illustration of a fit individual, clearly a gym enthusiast, fully clothed in a rustic town square. The character is wearing a stylish casual outfit (1).webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DALL·E 2024-04-23 21.50.17 - An illustration of a fit individual, clearly a gym enthusiast, fully clothed in a rustic town square. The character is wearing a stylish casual outfit.webp" beforeDir="false" afterPath="$PROJECT_DIR$/DALL·E 2024-04-23 21.50.17 - An illustration of a fit individual, clearly a gym enthusiast, fully clothed in a rustic town square. The character is wearing a stylish casual outfit (1).webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DALL·E 2024-04-23 21.50.24 - An illustration of a fit individual, clearly a regular at the gym, dressed in a sharp suit standing outside of a skyscraper. The character exudes a pr.webp" beforeDir="false" afterPath="$PROJECT_DIR$/DALL·E 2024-04-23 21.50.24 - An illustration of a fit individual, clearly a regular at the gym, dressed in a sharp suit standing outside of a skyscraper. The character exudes a pr (1).webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logged_in_navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/logged_in_navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logged_out.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logged_out_navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/logged_out_navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <workItem from="1716315390622" duration="518000" />
       <workItem from="1716316095267" duration="1119000" />
       <workItem from="1716722250738" duration="646000" />
-      <workItem from="1716722958307" duration="11401000" />
+      <workItem from="1716722958307" duration="12485000" />
     </task>
     <task id="LOCAL-00001" summary="sign up login">
       <option name="closed" value="true" />
@@ -134,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716731598100</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added registration and login modals in logged out navbar">
+      <option name="closed" value="true" />
+      <created>1716800836764</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716800836764</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +154,7 @@
     <MESSAGE value="navbar in signin form" />
     <MESSAGE value="proper redirections" />
     <MESSAGE value="added main page content" />
-    <option name="LAST_COMMIT_MESSAGE" value="added main page content" />
+    <MESSAGE value="added registration and login modals in logged out navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="added registration and login modals in logged out navbar" />
   </component>
 </project>

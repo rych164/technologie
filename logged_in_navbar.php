@@ -4,7 +4,7 @@ if (isset($_GET['logout'])) {
     // Unset the user session
     unset($_SESSION['user_name']);
     // Redirect to a certain page (e.g., login page)
-    header('Location: login.php');
+    header("Location: index.php");
     exit;
 }
 ?>
