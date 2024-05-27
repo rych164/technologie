@@ -19,7 +19,11 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             if($result && mysqli_num_rows($result)>0)
             {
                 $user_data= mysqli_fetch_assoc($result);
-                if($user_data['user_password']===$password)
+                var_dump($password);
+                var_dump($user_data['user_password']);
+                var_dump(password_hash($password,PASSWORD_DEFAULT));
+                var_dump(password_verify($user_data['user_password'],$password));
+                if(password_verify($password,$user_data['user_password']))
                 {
                     $_SESSION['user_name']=$user_data['user_name'];
                     header("Location: index.php");
@@ -48,6 +52,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     </head>
     <body>
         <?php include("logged_out_navbar.php") ?>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+            Login
+        </button>
         <div id="box">
             <form method="post">
                 <input type="text" name="user_name">
@@ -57,4 +64,32 @@ if($_SERVER['REQUEST_METHOD']=="POST")
         </div>
         <?php include("footer.php")?>
     </body>
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="login.php"> <!-- Update action as needed -->
+                        <div class="form-group">
+                            <label for="user_name_login">Username:</label>
+                            <input type="text" class="form-control" id="user_name_login" name="user_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password_login">Password:</label>
+                            <input type="password" class="form-control" id="password_login" name="password" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </html>

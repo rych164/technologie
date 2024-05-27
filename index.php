@@ -1,9 +1,51 @@
 <?php
 session_start();
-    include("connection.php");
-    include("functions.php");
+include("connection.php");
+include("functions.php");
 
-    $user_data=check_login($con);
+$error_message = ""; // To capture and display any error message
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if (isset($_POST['action']) && $_POST['action'] == "login") {
+        // Handle login
+        $user_name = $_POST['user_name'];
+        $password = $_POST['password'];
+        if (!empty($user_name) && !empty($password)) {
+            $query = "select * from users where user_name = '$user_name' limit 1";
+            $result = mysqli_query($con, $query);
+            if ($result && mysqli_num_rows($result) > 0) {
+                $user_data = mysqli_fetch_assoc($result);
+                if (password_verify($password, $user_data['user_password'])) {
+                    $_SESSION['user_name'] = $user_data['user_name'];
+                    header("Location: index.php"); // Reload the page to update the session state on the client side
+                    die;
+                } else {
+                    $error_message = "Invalid username or password";
+                }
+            } else {
+                $error_message = "Invalid username or password";
+            }
+        } else {
+            $error_message = "Please enter username and password";
+        }
+    } elseif (isset($_POST['action']) && $_POST['action'] == "signup") {
+        // Handle sign up
+        $user_name = $_POST['user_name'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
+        if (!empty($user_name) && !empty($password) && !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            $query = "INSERT INTO users(email, user_name, user_password) VALUES ('$email', '$user_name', '$password')";
+            mysqli_query($con, $query);
+            header("Location: index.php"); // Assume signup is successful and redirect or you could log them in directly
+            die;
+        } else {
+            $error_message = "Please enter valid information";
+        }
+    }
+}
+
+$user_data = check_login($con);
 ?>
 <!DOCTYPE html>
 <html>
@@ -113,4 +155,5 @@ session_start();
         </div>
         <?php include("footer.php")?>
     </body>
+
 </html>
