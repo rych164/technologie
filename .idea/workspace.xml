@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="przywrócenie poprawnego wyświetlania obrazów">
-      <change afterPath="$PROJECT_DIR$/exercises.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modals.php" afterDir="false" />
+    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="Dodanie zakładki plany treningowe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_plans.php" beforeDir="false" afterPath="$PROJECT_DIR$/training_plans.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +78,7 @@
       <workItem from="1716315390622" duration="518000" />
       <workItem from="1716316095267" duration="1119000" />
       <workItem from="1716722250738" duration="646000" />
-      <workItem from="1716722958307" duration="15253000" />
+      <workItem from="1716722958307" duration="16529000" />
     </task>
     <task id="LOCAL-00001" summary="sign up login">
       <option name="closed" value="true" />
@@ -178,7 +176,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716804895628</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Dodanie zakładki ćwiczenia">
+      <option name="closed" value="true" />
+      <created>1716805677312</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716805677312</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Dodanie zakładki plany treningowe">
+      <option name="closed" value="true" />
+      <created>1716805924278</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716805924278</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +211,8 @@
     <MESSAGE value="dopasowanie stylów strony do pop upów" />
     <MESSAGE value="Ukończenie rejestracji i logowania" />
     <MESSAGE value="przywrócenie poprawnego wyświetlania obrazów" />
-    <option name="LAST_COMMIT_MESSAGE" value="przywrócenie poprawnego wyświetlania obrazów" />
+    <MESSAGE value="Dodanie zakładki ćwiczenia" />
+    <MESSAGE value="Dodanie zakładki plany treningowe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodanie zakładki plany treningowe" />
   </component>
 </project>
