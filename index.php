@@ -3,11 +3,14 @@ session_start();
 include("connection.php");
 include("functions.php");
 
-$error_message = ""; // To capture and display any error message
+$message = ''; // Initialize message variable
+if (isset($_SESSION['message'])) {
+    $message = $_SESSION['message']; // Retrieve the message from session
+    unset($_SESSION['message']); // Clear the message from session
+}
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_POST['action']) && $_POST['action'] == "login") {
-        // Handle login
         $user_name = $_POST['user_name'];
         $password = $_POST['password'];
         if (!empty($user_name) && !empty($password)) {
@@ -17,36 +20,52 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $user_data = mysqli_fetch_assoc($result);
                 if (password_verify($password, $user_data['user_password'])) {
                     $_SESSION['user_name'] = $user_data['user_name'];
-                    header("Location: index.php"); // Reload the page to update the session state on the client side
-                    die;
+                    $_SESSION['message'] = ['text' => 'Login successful!', 'type' => 'success'];
+                    header("Location: index.php");
+                    exit;
                 } else {
-                    $error_message = "Invalid username or password";
+                    $_SESSION['message'] = ['text' => 'Invalid username or password', 'type' => 'error'];
+                    header("Location: index.php");
+                    exit;
                 }
             } else {
-                $error_message = "Invalid username or password";
+                $_SESSION['message'] = ['text' => 'Invalid username or password', 'type' => 'error'];
+                header("Location: index.php");
+                exit;
             }
         } else {
-            $error_message = "Please enter username and password";
+            $_SESSION['message'] = ['text' => 'Please enter username and password', 'type' => 'error'];
+            header("Location: index.php");
+            exit;
         }
     } elseif (isset($_POST['action']) && $_POST['action'] == "signup") {
-        // Handle sign up
         $user_name = $_POST['user_name'];
         $password = $_POST['password'];
         $email = $_POST['email'];
         if (!empty($user_name) && !empty($password) && !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $password = password_hash($password, PASSWORD_DEFAULT);
             $query = "INSERT INTO users(email, user_name, user_password) VALUES ('$email', '$user_name', '$password')";
-            mysqli_query($con, $query);
-            header("Location: index.php"); // Assume signup is successful and redirect or you could log them in directly
-            die;
+            $result = mysqli_query($con, $query);
+            if ($result) {
+                $_SESSION['message'] = ['text' => 'Registration successful!', 'type' => 'success'];
+                header("Location: index.php");
+                exit;
+            } else {
+                $_SESSION['message'] = ['text' => 'Registration failed. Please check your details.', 'type' => 'error'];
+                header("Location: index.php");
+                exit;
+            }
         } else {
-            $error_message = "Please enter valid information";
+            $_SESSION['message'] = ['text' => 'Please enter valid information', 'type' => 'error'];
+            header("Location: index.php");
+            exit;
         }
     }
 }
 
 $user_data = check_login($con);
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -219,4 +238,17 @@ $user_data = check_login($con);
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var message = <?php echo json_encode($message); ?>;
+            if (message !== '') {
+                Swal.fire({
+                    title: message.type === 'success' ? 'Success' : 'Error',
+                    text: message.text,
+                    icon: message.type,
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script>
 </html>
