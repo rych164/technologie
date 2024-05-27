@@ -238,6 +238,7 @@ $user_data = check_login($con);
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var message = <?php echo json_encode($message); ?>;
@@ -246,7 +247,19 @@ $user_data = check_login($con);
                     title: message.type === 'success' ? 'Success' : 'Error',
                     text: message.text,
                     icon: message.type,
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    buttonsStyling: false,
+                    customClass: {
+                        confirmButton: 'btn btn-primary', // Use Bootstrap button styling
+                        popup: 'swal-wide', // Custom class for wider pop-up
+                        title: 'text-light',
+                        content: 'text-light',
+                        icon: 'text-warning'
+                    },
+                    background: '#262626',
+                    color: '#d9d9d9',
+                    confirmButtonColor: '#ffa500',
+                    iconColor: '#ffa500'
                 });
             }
         });

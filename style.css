@@ -172,6 +172,30 @@ body {
 .navbar .dropdown:hover>.dropdown-menu {
     display: block;
 }
+/* SweetAlert2 Custom Styles */
+.swal-wide {
+    width: 600px; /* Set the width as needed */
+}
+
+/* Ensuring the buttons and text align with the site's theme */
+.btn-primary {
+    background-color: #ffa500;
+    border-color: #e69500;
+    color: #262626;
+}
+
+.btn-primary:hover {
+    background-color: #cc8400;
+    border-color: #b57200;
+}
+
+.text-light {
+    color: #d9d9d9 !important; /* Ensure high contrast text */
+}
+
+.text-warning {
+    color: #ffa500 !important; /* Ensure warning and icons are in theme color */
+}
 
 /* Optional: CSS for animating the dropdown */
 .dropdown-menu {
