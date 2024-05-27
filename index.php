@@ -38,11 +38,39 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             header("Location: index.php");
             exit;
         }
-    } elseif (isset($_POST['action']) && $_POST['action'] == "signup") {
-        $user_name = $_POST['user_name'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
-        if (!empty($user_name) && !empty($password) && !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    } elseif ($_SERVER['REQUEST_METHOD'] == "POST") {
+        if (isset($_POST['action']) && $_POST['action'] == "signup") {
+            $user_name = $_POST['user_name'];
+            $password = $_POST['password'];
+            $repeat_password = $_POST['repeat_password'];
+            $email = $_POST['email'];
+
+            // Check if passwords match
+            if ($password !== $repeat_password) {
+                $_SESSION['message'] = ['text' => 'Passwords do not match.', 'type' => 'error'];
+                header("Location: index.php");
+                exit;
+            }
+
+            // Check for unique username
+            $user_check_query = "SELECT * FROM users WHERE user_name = '$user_name' LIMIT 1";
+            $user_check_result = mysqli_query($con, $user_check_query);
+            if (mysqli_num_rows($user_check_result) > 0) {
+                $_SESSION['message'] = ['text' => 'Username already exists.', 'type' => 'error'];
+                header("Location: index.php");
+                exit;
+            }
+
+            // Check for unique email
+            $email_check_query = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
+            $email_check_result = mysqli_query($con, $email_check_query);
+            if (mysqli_num_rows($email_check_result) > 0) {
+                $_SESSION['message'] = ['text' => 'Email already exists.', 'type' => 'error'];
+                header("Location: index.php");
+                exit;
+            }
+
+            // If all checks pass, proceed with user registration
             $password = password_hash($password, PASSWORD_DEFAULT);
             $query = "INSERT INTO users(email, user_name, user_password) VALUES ('$email', '$user_name', '$password')";
             $result = mysqli_query($con, $query);
@@ -51,14 +79,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 header("Location: index.php");
                 exit;
             } else {
-                $_SESSION['message'] = ['text' => 'Registration failed. Please check your details.', 'type' => 'error'];
+                $_SESSION['message'] = ['text' => 'Registration failed. Please try again.', 'type' => 'error'];
                 header("Location: index.php");
                 exit;
             }
-        } else {
-            $_SESSION['message'] = ['text' => 'Please enter valid information', 'type' => 'error'];
-            header("Location: index.php");
-            exit;
         }
     }
 }
