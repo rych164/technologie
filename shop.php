@@ -19,12 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['plan_id'])) {
     } else {
         $_SESSION['message'] = ['text' => 'Invalid plan selected', 'type' => 'error'];
     }
-    header("Location: cart.php"); // Redirect to a cart page or back to plans
+    header("Location: shop.php"); // Redirect to a cart page or back to plans
     exit;
 }
 
 $user_data = check_login($con);
-//$training_plans = mysqli_query($con, "SELECT id, name, price FROM training_plans");
+$training_plans = mysqli_query($con, "SELECT id, name, price FROM training_plans");
 
 $total_price = 0;
 $total_count = 0;
@@ -44,17 +44,17 @@ $total_count = 0;
 
 <div class="container">
     <h2>Your Training Plans</h2>
-    <?php // if (mysqli_num_rows($training_plans) > 0): ?>
+    <?php  if (mysqli_num_rows($training_plans) > 0): ?>
         <div class="list-group">
-            <?php // while($plan = mysqli_fetch_assoc($training_plans)): ?>
+            <?php  while($plan = mysqli_fetch_assoc($training_plans)): ?>
                 <a href="#" class="list-group-item list-group-item-action">
-                    <?php // echo $plan['id'] . ". " . $plan['name'] . " - $" . $plan['price']; ?>
+                    <?php  echo $plan['id'] . ". " . $plan['name'] . " - $" . $plan['price']; ?>
                 </a>
                 <?php
-//                $total_price += $plan['price'];
-//                $total_count++;
+                $total_price += $plan['price'];
+                $total_count++;
                 ?>
-            <?php //endwhile; ?>
+            <?php endwhile; ?>
         </div>
         <div class="mt-4">
             <a href="training_plans.php" class="btn btn-primary">Add New Training Plan</a>
@@ -64,12 +64,12 @@ $total_count = 0;
             <p>Total Training Plans: <?php echo $total_count; ?></p>
             <p>Total Price: $<?php echo number_format($total_price, 2); ?></p>
         </div>
-    <?php //else: ?>
+    <?php else: ?>
         <p>You have not chosen any training plan yet. To start your training journey, pick at least one.</p>
         <div class="mt-4">
             <a href="training_plans.php" class="btn btn-primary">Add New Training Plan</a>
         </div>
-    <?php// endif; ?>
+    <?php endif; ?>
 </div>
 
 <?php include("footer.php"); ?>
