@@ -8,6 +8,7 @@ if (isset($_GET['logout'])) {
     exit;
 }
 ?>
+<link href="style.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="scripts.js"></script>
@@ -18,6 +19,7 @@ if (isset($_GET['logout'])) {
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="shop.php">Shop</a>
             <a class="nav-item nav-link" href="exercises.php">Exercises</a>
             <a class="nav-item nav-link" href="training_plans.php">Training Plans</a>
             <a href="?logout=true" class="nav-item nav-link">Log out</a>

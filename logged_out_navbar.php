@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Sign In/Login
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -19,8 +19,31 @@
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginModal">Log In</a>
                 </div>
             </div>
+            <a class="nav-item nav-link" href="#" onclick="showLoginAlert(); return false;">Shop</a>
             <a class="nav-item nav-link" href="exercises.php">Exercises</a>
             <a class="nav-item nav-link" href="training_plans.php">Training Plans</a>
         </div>
     </div>
 </nav>
+<script>
+    function showLoginAlert() {
+        Swal.fire({
+            title: 'Access Denied',
+            text: 'To access the shop, you have to be logged in.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            buttonsStyling: false,
+            customClass: {
+                confirmButton: 'btn btn-primary',
+                popup: 'swal-wide',
+                title: 'text-light',
+                content: 'text-light',
+                icon: 'text-warning'
+            },
+            background: '#262626',
+            color: '#d9d9d9',
+            confirmButtonColor: '#ffa500',
+            iconColor: '#ffa500'
+        });
+    }
+</script>

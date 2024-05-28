@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="Dodanie zakładki plany treningowe">
+    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="wrzucenie opisów planów danych">
+      <change afterPath="$PROJECT_DIR$/shop.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop_icon.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logged_in_navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/logged_in_navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logged_out_navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/logged_out_navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training_plans.php" beforeDir="false" afterPath="$PROJECT_DIR$/training_plans.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +60,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\one_more_time" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\one_more_time" />
     </key>
@@ -78,7 +86,7 @@
       <workItem from="1716315390622" duration="518000" />
       <workItem from="1716316095267" duration="1119000" />
       <workItem from="1716722250738" duration="646000" />
-      <workItem from="1716722958307" duration="16529000" />
+      <workItem from="1716722958307" duration="21440000" />
     </task>
     <task id="LOCAL-00001" summary="sign up login">
       <option name="closed" value="true" />
@@ -192,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716805924278</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="wrzucenie opisów planów danych">
+      <option name="closed" value="true" />
+      <created>1716807080420</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716807080420</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +229,7 @@
     <MESSAGE value="przywrócenie poprawnego wyświetlania obrazów" />
     <MESSAGE value="Dodanie zakładki ćwiczenia" />
     <MESSAGE value="Dodanie zakładki plany treningowe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodanie zakładki plany treningowe" />
+    <MESSAGE value="wrzucenie opisów planów danych" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrzucenie opisów planów danych" />
   </component>
 </project>

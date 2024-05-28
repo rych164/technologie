@@ -114,10 +114,14 @@ $user_data = check_login($con);
             <p style="text-align: center;"><strong>Unlock the ultimate transformation with our Full Body Training Plan!</strong> Imagine sculpting every muscle, boosting your energy, and achieving the physique you've always dreamed of. This comprehensive program is designed to target all major muscle groups, ensuring balanced development and maximum results. With easy-to-follow instructions and expert guidance, you'll be on the fast track to fitness success. <em>Don't miss the opportunity to invest in yourself</em></p>
             <br>
             <div class="col-12 training-plan-image">
-                <img src="DALL·E 2024-04-23 21.50.17 - An illustration of a fit individual, clearly a gym enthusiast, fully clothed in a rustic town square. The character is wearing a stylish casual outfit.webp" alt="Large feature">
+                <div class="image-circle" style="background-image: url('DALL·E 2024-04-23 21.50.17 - An illustration of a fit individual, clearly a gym enthusiast, fully clothed in a rustic town square. The character is wearing a stylish casual outfit.webp');"></div>
             </div>
             <br>
             <p style="text-align: center;">Your best body is just a plan away!</p>
+            <form action="shop.php" method="post">
+                <input type="hidden" name="plan_id" value="1">
+                <button type="submit" class="btn btn-primary" style="transform: translate(475%)">Add to Cart</button>
+            </form>
         </div>
     </div>
     <br>
@@ -127,9 +131,13 @@ $user_data = check_login($con);
                 <strong>Transform your body with our Upper Lower Program!</strong> Imagine a workout routine that strategically divides your training into upper and lower body days, maximizing efficiency and results. This program ensures you give each muscle group the attention it deserves, promoting balanced growth and strength. With tailored exercises and expert guidance, you'll build a powerful upper body and strong, toned legs. <em>Seize the opportunity to enhance your fitness journey.</em></p>
             <br>
             <div class="col-12 training-plan-image">
-                <img src="DALL·E 2024-04-23 21.50.24 - An illustration of a fit individual, clearly a regular at the gym, dressed in a sharp suit standing outside of a skyscraper. The character exudes a pr.webp" alt="Large feature">
+                <div class="image-circle" style="background-image: url('DALL·E 2024-04-23 21.50.24 - An illustration of a fit individual, clearly a regular at the gym, dressed in a sharp suit standing outside of a skyscraper. The character exudes a pr.webp');"></div>
             </div>
             <p style="text-align: center;"> Your ideal physique is within reach!</p>
+            <form action="shop.php" method="post">
+                <input type="hidden" name="plan_id" value="1">
+                <button type="submit" class="btn btn-primary" style="transform: translate(475%)">Add to Cart</button>
+            </form>
         </div>
     </div>
 </div>
@@ -163,4 +171,15 @@ $user_data = check_login($con);
         }
     });
 </script>
+<style>
+    .image-circle {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        margin: 0 auto;
+        border: 5px solid orange;
+    }
+</style>
 </html>
