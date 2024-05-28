@@ -3,6 +3,17 @@ session_start();
 include("connection.php");
 include("functions.php");
 
+if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['remove_id'])) {
+    // Remove the training plan from the cart
+    $remove_id = $_POST['remove_id'];
+    if (isset($_SESSION['cart'][$remove_id])) {
+        unset($_SESSION['cart'][$remove_id]);  // Remove the item from the cart
+        $_SESSION['message'] = ['text' => 'Training plan removed successfully!', 'type' => 'success'];
+    }
+    header("Location: shop.php");
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['plan_id'])) {
     $plan_id = $_POST['plan_id'];
     // Fetch the plan details from the database
@@ -21,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['plan_id'])) {
     }
     header("Location: shop.php"); // Redirect to a cart page or back to plans
     exit;
+
 }
 
 $user_data = check_login($con);
@@ -46,16 +58,19 @@ $total_count = 0;
     <h2>Your Training Plans</h2>
     <?php  if (mysqli_num_rows($training_plans) > 0): ?>
         <div class="list-group">
-            <?php  while($plan = mysqli_fetch_assoc($training_plans)): ?>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <?php  echo $plan['id'] . ". " . $plan['name'] . " - $" . $plan['price']; ?>
-                </a>
-                <?php
-                $total_price += $plan['price'];
-                $total_count++;
-                ?>
-            <?php endwhile; ?>
+            <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
+                <?php foreach ($_SESSION['cart'] as $index => $item): ?>
+                    <div class="list-group-item">
+                        <?php echo $item['name'] . " - $" . $item['price']; ?>
+                        <form action="shop.php" method="post" style="display: inline-block;">
+                            <input type="hidden" name="remove_id" value="<?php echo $index; ?>">
+                            <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                        </form>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
+
         <div class="mt-4">
             <a href="training_plans.php" class="btn btn-primary">Add New Training Plan</a>
         </div>
