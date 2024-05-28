@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="poprawne zarządzenie pop upami" />
+    <list default="true" id="4006e719-5dab-45aa-ae4b-13604e5d7b7b" name="Changes" comment="dodawanie poprawnych planów treningowych do listy">
+      <change beforePath="$PROJECT_DIR$/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +80,7 @@
       <workItem from="1716315390622" duration="518000" />
       <workItem from="1716316095267" duration="1119000" />
       <workItem from="1716722250738" duration="646000" />
-      <workItem from="1716722958307" duration="23495000" />
+      <workItem from="1716722958307" duration="23836000" />
     </task>
     <task id="LOCAL-00001" summary="sign up login">
       <option name="closed" value="true" />
@@ -232,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716882793201</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="dodawanie poprawnych planów treningowych do listy">
+      <option name="closed" value="true" />
+      <created>1716883003396</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716883003396</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +268,7 @@
     <MESSAGE value="Dodawanie planów treningowych do podsumowania" />
     <MESSAGE value="usuwanie planów treningowych" />
     <MESSAGE value="poprawne zarządzenie pop upami" />
-    <option name="LAST_COMMIT_MESSAGE" value="poprawne zarządzenie pop upami" />
+    <MESSAGE value="dodawanie poprawnych planów treningowych do listy" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodawanie poprawnych planów treningowych do listy" />
   </component>
 </project>

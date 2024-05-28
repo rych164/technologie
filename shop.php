@@ -39,6 +39,13 @@ $training_plans = mysqli_query($con, "SELECT id, name, price FROM training_plans
 
 $total_price = 0;
 $total_count = 0;
+
+if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+    foreach ($_SESSION['cart'] as $item) {
+        $total_count += 1; // Increment the count of items
+        $total_price += $item['price']; // Add the item's price to the total
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
