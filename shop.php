@@ -8,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['remove_id'])) {
     $remove_id = $_POST['remove_id'];
     if (isset($_SESSION['cart'][$remove_id])) {
         unset($_SESSION['cart'][$remove_id]);  // Remove the item from the cart
-        $_SESSION['message'] = ['text' => 'Training plan removed successfully!', 'type' => 'success'];
     }
     header("Location: shop.php");
     exit;
@@ -26,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['plan_id'])) {
             $_SESSION['cart'] = [];
         }
         $_SESSION['cart'][] = $plan;  // Add the plan to the cart
-        $_SESSION['message'] = ['text' => 'Plan added to cart successfully!', 'type' => 'success'];
+        //$_SESSION['message'] = ['text' => 'Plan added to cart successfully!', 'type' => 'success'];
     } else {
         $_SESSION['message'] = ['text' => 'Invalid plan selected', 'type' => 'error'];
     }
