@@ -135,7 +135,7 @@ $user_data = check_login($con);
             </div>
             <p style="text-align: center;"> Your ideal physique is within reach!</p>
             <form action="shop.php" method="post">
-                <input type="hidden" name="plan_id" value="1">
+                <input type="hidden" name="plan_id" value="2">
                 <button type="submit" class="btn btn-primary" style="transform: translate(475%)">Add to Cart</button>
             </form>
         </div>
