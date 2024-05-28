@@ -46,6 +46,20 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
         $total_price += $item['price']; // Add the item's price to the total
     }
 }
+if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit_order'])) {
+    if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+        // Process your order logic here (e.g., saving the order details to the database)
+
+        // Set a success message
+        $_SESSION['order_success'] = "Order placed successfully!";
+    } else {
+        // Set a failure message
+        $_SESSION['order_failure'] = "You must add at least one training plan to place an order.";
+    }
+    header("Location: shop.php");
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -91,8 +105,36 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
             <a href="training_plans.php" class="btn btn-primary">Add New Training Plan</a>
         </div>
     <?php endif; ?>
+    <div class="mt-3">
+        <form method="post" action="shop.php">
+            <button type="submit" name="submit_order" class="btn btn-success">Submit Order</button>
+        </form>
+    </div>
 </div>
 
 <?php include("footer.php"); ?>
+<script>
+    // Check for success message and display the success popup
+    <?php if (isset($_SESSION['order_success'])): ?>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success!',
+        text: '<?php echo $_SESSION['order_success']; ?>',
+        confirmButtonText: 'Great!'
+    });
+    <?php unset($_SESSION['order_success']); // Clear the success message ?>
+    <?php endif; ?>
+
+    // Check for failure message and display the failure popup
+    <?php if (isset($_SESSION['order_failure'])): ?>
+    Swal.fire({
+        icon: 'error',
+        title: 'Failed!',
+        text: '<?php echo $_SESSION['order_failure']; ?>',
+        confirmButtonText: 'OK'
+    });
+    <?php unset($_SESSION['order_failure']); // Clear the failure message ?>
+    <?php endif; ?>
+</script>
 </body>
 </html>
